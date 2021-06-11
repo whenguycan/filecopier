@@ -1,0 +1,4 @@
+##
+src/main/app/com/goisan/attendance/controller/KqRecordAppController.java
+src/main/webapp/WEB-INF/app/attendance/kqRecordList.jsp
+src/main/resources/mapper/business/ArchivesDao.xml
