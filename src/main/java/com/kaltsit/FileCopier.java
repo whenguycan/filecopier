@@ -50,6 +50,7 @@ public class FileCopier {
                 System.out.println("不识别的路径：" + line);
             }
         }
+        System.out.println("打包完成：" + targetDir.getPath());
     }
 
     static boolean isSourceFile(String str) {
