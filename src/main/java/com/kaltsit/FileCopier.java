@@ -6,6 +6,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * 简易补丁打包工具
@@ -15,7 +18,7 @@ import java.nio.file.StandardCopyOption;
 public class FileCopier {
 
     static final File dir = new File("C:\\_git_repo\\3.2_Gemini_slszyzz");
-    static final File targetDir = new File("C:\\Users\\EDZ\\Desktop\\3.2_Gemini_slszyzz");
+    static final File targetDir = new File("C:\\Users\\EDZ\\Desktop\\3.2_Gemini_slszyzz" + getTimestamp());
 
     public static void main(String[] args) throws Exception {
         InputStream is = ClassLoader.getSystemResourceAsStream("files.txt");
@@ -64,6 +67,11 @@ public class FileCopier {
 
     static boolean isWebappFile(String str) {
         return str.contains("src/main/webapp");
+    }
+
+    static String getTimestamp() {
+        DateFormat df = new SimpleDateFormat("_yyyy_MM_dd_HH_mm_ss");
+        return df.format(new Date());
     }
 
 }
